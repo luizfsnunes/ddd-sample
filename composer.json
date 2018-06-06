@@ -6,12 +6,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "friendsofsymfony/rest-bundle": "^2.3",
+        "sensio/framework-extra-bundle": "^5.1",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.1",
         "symfony/lts": "^4@dev",
+        "symfony/orm-pack": "^1.0",
         "symfony/serializer-pack": "^1.0",
         "symfony/translation": "^4.1",
+        "symfony/twig-bundle": "^4.1",
         "symfony/yaml": "^4.1"
     },
     "require-dev": {

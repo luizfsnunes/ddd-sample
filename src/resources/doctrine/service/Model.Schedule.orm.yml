@@ -1,0 +1,20 @@
+Contexts\Service\Model\Schedule:
+  type: entity
+  repositoryClass: App\Repository\ScheduleRepository
+  table: schedules
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  embedded:
+    interval:
+      class: Contexts\Common\ValueObject\DateInterval
+      columnPrefix: false
+  manyToOne:
+    service:
+      targetEntity: Contexts\Service\Model\Service
+      inversedBy: schedules
+      joinColumn:
+        name: service_id
+        referencedColumnName: id

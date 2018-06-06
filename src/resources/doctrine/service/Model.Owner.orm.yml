@@ -1,0 +1,17 @@
+Contexts\Service\Model\Owner:
+  type: embeddable
+  repositoryClass: App\Repository\OwnerRepository
+  table: users
+  readOnly: true
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+    email:
+      type: string
+    role:
+      type: string

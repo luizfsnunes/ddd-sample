@@ -1,0 +1,7 @@
+Contexts\Common\ValueObject\DateInterval:
+  type: embeddable
+  fields:
+    initial:
+      type: datetime
+    final:
+      type: datetime

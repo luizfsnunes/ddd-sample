@@ -1,0 +1,25 @@
+Contexts\Service\Model\Service:
+  type: entity
+  repositoryClass: App\Repository\ServiceRepository
+  table: services
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 50
+      nullable: false
+  oneToOne:
+    owner:
+      targetEntity: Contexts\Service\Model\Owner
+      joinColumn:
+        name: user_id
+        referencedColumnName: id
+  oneToMany:
+    schedules:
+      targetEntity: Contexts\Service\Model\Schedule
+      mappedBy: service
+      cascade: ["persist"]

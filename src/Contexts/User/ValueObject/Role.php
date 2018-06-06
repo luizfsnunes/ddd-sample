@@ -16,10 +16,11 @@ class Role
     /**
      * Role constructor.
      * @param string $role
+     * @throws DomainModelException
      */
     public function __construct(string $role)
     {
-        $this->role = $role;
+        $this->setRole($role);
     }
 
     /**

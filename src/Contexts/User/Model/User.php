@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Contexts\User\Model;
 
 use App\Infrastructure\DomainEvent\EventRecorder;
-use Contexts\Common\Model\Identity;
 use Contexts\User\Enum\RolesEnum;
 use Contexts\User\Event\CreatedClientEvent;
 use Contexts\User\Event\CreatedServiceOwnerEvent;
@@ -13,9 +12,9 @@ use Contexts\User\ValueObject\Role;
 class User
 {
     /**
-     * @var Identity
+     * @var int
      */
-    private $identity;
+    private $id;
 
     /**
      * @var string
@@ -39,18 +38,16 @@ class User
 
     /**
      * User constructor.
-     * @param Identity $identity
      * @param string $name
      * @param string $email
      * @param string $password
      * @param Role $role
      */
-    public function __construct(Identity $identity, string $name, string $email, string $password, Role $role)
+    public function __construct(string $name, string $email, string $password, Role $role)
     {
-        $this->identity = $identity;
         $this->name = $name;
         $this->email = $email;
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_ARGON2I);
         $this->role = $role;
 
         switch ($this->role) {
@@ -65,11 +62,11 @@ class User
     }
 
     /**
-     * @return Identity
+     * @return int
      */
-    public function getIdentity(): Identity
+    public function getId(): int
     {
-        return $this->identity;
+        return $this->id;
     }
 
     /**

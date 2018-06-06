@@ -1,0 +1,26 @@
+Contexts\User\Model\User:
+  type: entity
+  repositoryClass: App\Repository\UserRepository
+  table: users
+  indexes:
+    name_index:
+      columns: [ email ]
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 50
+      nullable: false
+    email:
+      type: string
+      length: 100
+      unique: true
+      nullable: false
+  embedded:
+    role:
+      class: Contexts\User\ValueObject\Role
+      columnPrefix: false

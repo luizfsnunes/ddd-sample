@@ -1,0 +1,6 @@
+Contexts\User\ValueObject\Role:
+  type: embeddable
+  fields:
+    role:
+      type: string
+      length: 20

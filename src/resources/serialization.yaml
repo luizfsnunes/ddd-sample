@@ -1,0 +1,31 @@
+Contexts\User\Model\User:
+  attributes:
+    id:
+      groups: ['secure']
+    name:
+      groups: ['secure']
+    email:
+      groups: ['secure']
+    role:
+      groups: ['secure']
+
+Contexts\User\ValueObject\Role:
+  attributes:
+    role:
+      groups: ['secure']
+
+Contexts\Service\Model\Service:
+  attributes:
+    id:
+      groups: ['secure']
+    name:
+      groups: ['secure']
+    owner:
+      groups: ['secure']
+
+Contexts\Service\Model\Schedule:
+  attributes:
+    initial:
+      groups: ['secure']
+    final:
+      groups: ['secure']

@@ -29,3 +29,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    Contexts\User\Repository\UserRepository: '@App\Repository\DoctrineUserRepository'
+    Contexts\Service\Repository\OwnerRepository: '@App\Repository\DoctrineOwnerRepository'
+    Contexts\Service\Repository\ClientRepository: '@App\Repository\DoctrineClientRepository'
+    Contexts\Service\Repository\ServiceRepository: '@App\Repository\DoctrineServiceRepository'
+    Contexts\Service\Repository\ScheduleRepository: '@App\Repository\DoctrineScheduleRepository'
